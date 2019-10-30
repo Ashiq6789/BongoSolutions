@@ -1,0 +1,3 @@
+This main objective is pretty simple which is to compare each char of two Strings. However if String is too long then the processing time will increase dramatically.
+For this reason after converting strings into char array they were sorted first. Now to check entire string it will loop through the array only once. 
+For safety this function returns false if input is null or empty/   

@@ -1,0 +1,44 @@
+In written Pattern in this way we can creat object:
+
+
+public class Test2 {
+
+    public static void main (String[] args){
+
+        Vehicle vehicle1 = new Cars(4, 4,true);
+        Vehicle vehicle2 = new Planes(6,200,false);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+There are many design pattern for this solution. among them here using Factory Design Pattern. here we create a class and use it as a factory for making required object in this way:
+
+
+
+class VehicleFactory{
+     public Cars getCar(int wheels, int passengers, boolean gas){
+         return new Cars(wheels, passengers,gas);
+     }
+    public Planes getPlane(int wheels, int passengers, boolean gas){
+        return new Planes(wheels, passengers,gas);
+    }
+}
+
+public class Test2_FactoryDesign {
+
+    public static void main (String[] args){
+
+        VehicleFactory factory =new VehicleFactory();
+
+        Vehicle vehicle1 = factory.getCar(4,4,true);
+        Vehicle vehicle2 = factory.getPlane(6,200,false);
+    }
+}

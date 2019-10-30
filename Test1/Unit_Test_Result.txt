@@ -1,0 +1,14 @@
+Input1: hydroxydeoxycorticosterones
+Input2: hydroxydesoxycorticosterone
+Result: true
+Time taken: 208600ns
+
+Input1: table
+Input2: ebatl
+Result: true
+Time taken: 195200ns
+
+Input1: table
+Input2: ebatla
+Result: false
+Time taken: 8000ns

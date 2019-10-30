@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:weightSum="7"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:title="Bongo Player"
+        android:titleTextColor="#FF0303"
+        android:background="#FFFFFFFF">
+    </Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:gravity="center">
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/video"
+        />
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="2"
+    android:gravity="center"
+    android:weightSum="10">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rewind"
+        android:src="@drawable/ic_fast_rewind_black_24dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/lower_buttons"
+        />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/play"
+        android:src="@drawable/play"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/lower_buttons"
+        />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/forward"
+        android:src="@drawable/forward"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/lower_buttons"
+        />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/open"
+        android:src="@drawable/list"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:background="@drawable/lower_buttons"
+        />
+
+</LinearLayout>
+
+</LinearLayout>

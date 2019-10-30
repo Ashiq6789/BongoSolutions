@@ -1,0 +1,56 @@
+I will use MVC pattern. All the views will be handled in xml file and the mai n_activity itself will be the controller. As this application is small, the functionalities of "play","forward" and "rewind" will be in this main activity since. code for these function is below:
+
+private boolean playing;
+private Uri resource;
+private int position; 
+
+play.setOnClickListener(e ->{
+            if(!playing){
+                videoView.setVideoURI(resource);
+                videoView.seekTo(position);
+                playing =true;
+            }
+            else{
+                videoView.pause();
+                position = videoView.getCurrentPosition();
+                videoView.suspend();
+                playing = false;
+            }
+        });
+forward.setOnClickListener(e -> {
+            if(videoView.canSeekForward()){
+                if(playing){
+                    position = videoView.getCurrentPosition();
+                    videoView.stopPlayback();
+                }else{
+                    position = position + 5000;
+                }
+                videoView.setVideoURI(resource);
+                videoView.requestFocus(VideoView.FOCUS_FORWARD);
+                videoView.seekTo(position+5000);
+
+            }
+        });
+rewind.setOnClickListener(e -> {
+            if(videoView.canSeekBackward()){
+                if(playing){
+                   position = videoView.getCurrentPosition();
+                   videoView.stopPlayback();
+                   }else{
+                    position = position - 5000;
+                }
+                videoView.setVideoURI(resource);
+                videoView.requestFocus(VideoView.FOCUS_FORWARD);
+                videoView.seekTo(position-5000);
+            }
+        });
+
+videoView.setOnPreparedListener(mp -> {if(playing)videoView.start();});
+
+ public void onActivityResult(int requestCode,int resultCode,Intent data) {
+        if (resultCode == RESULT_OK && requestCode == 10) {
+            resource = data.getData();
+            videoView.setVideoURI(resource);
+            playing=true;
+        }
+    }
